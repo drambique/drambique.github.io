@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Drambique</title>
+	<meta name="description" content="Video games, art, and other virtual artifacts created by Drambique.">
+	<link rel="icon" type="image/png" href="images/web/favicon.png">
+
+	<!-- Facebook -->
+	<meta property="og:description" content="Video games, art, and other virtual artifacts created by Drambique.">
+	<meta property="og:image" content="https://drambique.github.io/images/social/card.png">
+	<meta property="og:site_name" content="Drambique">
+	<meta property="og:title" content="Drambique">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://drambique.github.io">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@drambique">
+	<meta name="twitter:creator" content="@drambique">
+	<meta name="twitter:title" content="Drambique">
+	<meta name="twitter:description" content="Video games, art, and other virtual artifacts created by Drambique.">
+	<meta name="twitter:image" content="https://drambique.github.io/images/social/card.png">
+	<meta name="twitter:dnt" content="on">
+
+	<!-- iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Drambique">
+	<link rel="apple-touch-icon" href="images/web/touchicon.png">
+	<link rel="apple-touch-startup-image" href="images/web/av.png">
+
+	<!-- Android -->
+	<meta name="theme-color" content="#000000">
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="icon" sizes="192x192" href="images/web/touchicon.png">
+
+	<!-- Pinterest -->
+	<meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!">
+
+	<!-- Google -->
+	<meta name="google" content="notranslate">
+
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		.card {
+			text-align: center;
+		}
+		.card > * {
+			vertical-align: middle;
+		}
+		.textbox {
+			width: 200px;
+			max-width: calc(100% - 100px);
+			text-align: left;
+			display: inline-block;
+			padding: 25px;
+		}
+		.textbox h1 {
+			margin-top: 0;
+		}
+		.avatar {
+			max-width: 150px;
+			max-height: 150px;
+			display: inline-block;
+			padding: 25px;
+		}
+		.avatar img {
+			max-width: 100%;
+		}
+		.card a {
+			color: #fff;
+			text-decoration: none;
+			background-color: transparent;
+		}
+		.button {
+			padding: 4px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			mix-blend-mode: difference;
+		}
+		.button:active + .buttonbackdrop,
+		.button:hover + .buttonbackdrop,
+		.button:focus + .buttonbackdrop {
+			height: 100%;
+		}
+		.buttonfiller {
+			color: transparent;
+			display: inline-block;
+		}
+		.buttonbackdrop {
+			background-color: #fff;
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			-webkit-transition: height .2s;
+			transition: height .2s;
+		}
+		.buttoncontainer {
+			position: relative;
+			display: inline-block;
+			padding: 4px;
+			margin: 2px;
+		}
+	</style>
+</head>
+<body>
+	<div class="fullpage">
+		<div class="card vcenter">
+			<div class="avatar">
+				<img src="images/content/avatar.png">
+			</div>
+			<div class="textbox">
+				<h1 class="center serif">Drambique</h1>
+				<div class="center">
+					<div class="buttoncontainer">
+						<div class="buttonfiller">Itch.io</div>
+						<a href="https://drambique.itch.io" class="button">Itch.io</a>
+						<div class="buttonbackdrop"></div>
+					</div>
+					<div class="buttoncontainer">
+						<div class="buttonfiller">Twitter</div>
+						<a href="https://twitter.com/drambique" class="button">Twitter</a>
+						<div class="buttonbackdrop"></div>
+					</div>
+					<div class="buttoncontainer">
+						<div class="buttonfiller">GitHub</div>
+						<a href="https://github.com/drambique" class="button">GitHub</a>
+						<div class="buttonbackdrop"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
