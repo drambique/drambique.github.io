@@ -43,6 +43,7 @@
 	<!-- Google -->
 	<meta name="google" content="notranslate">
 
+	<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/shift-toward-subtle.css">
 	<link rel="stylesheet" href="css/style.css">
 	<style>
 		.card {
@@ -82,6 +83,11 @@
 			left: 0;
 			z-index: 1;
 			mix-blend-mode: difference;
+			cursor: pointer;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
 		}
 		.button:active + .buttonbackdrop,
 		.button:hover + .buttonbackdrop,
@@ -91,6 +97,10 @@
 		.buttonfiller {
 			color: transparent;
 			display: inline-block;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
 		}
 		.buttonbackdrop {
 			background-color: #fff;
@@ -99,7 +109,6 @@
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			-webkit-transition: height .2s;
 			transition: height .2s;
 		}
 		.buttoncontainer {
@@ -107,6 +116,13 @@
 			display: inline-block;
 			padding: 4px;
 			margin: 2px;
+		}
+		.tippy-box[data-theme~='white'] {
+			color: #000;
+			background-color: #fff;
+		}
+		.tippy-box[data-theme~='white'][data-placement^='bottom'] > .tippy-arrow::before {
+			border-bottom-color: #fff;
 		}
 	</style>
 </head>
@@ -125,8 +141,8 @@
 						<div class="buttonbackdrop"></div>
 					</div>
 					<div class="buttoncontainer">
-						<div class="buttonfiller">Twitter</div>
-						<a href="https://twitter.com/drambique" class="button">Twitter</a>
+						<div class="buttonfiller">Discord</div>
+						<span class="button" id="discordlink" data-clipboard-text="drambique#1080">Discord</span>
 						<div class="buttonbackdrop"></div>
 					</div>
 					<div class="buttoncontainer">
@@ -138,5 +154,34 @@
 			</div>
 		</div>
 	</div>
+
+	<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+	<script src="https://unpkg.com/@popperjs/core@2"></script>
+	<script src="https://unpkg.com/tippy.js@6"></script>
+	<script>
+		(function() {
+			var clipboard = new ClipboardJS('#discordlink');
+			const tooltip = tippy('#discordlink', {
+				trigger: 'manual',
+				content: 'Copied!',
+				placement: 'bottom',
+				animation: 'shift-toward-subtle',
+				duration: 300,
+				theme: 'white',
+			});
+
+			clipboard.on('success', function(e) {
+				tooltip[0].show();
+			});
+
+			clipboard.on('error', function(e) {
+				tooltip[0].setProps({
+					content: 'drambique#1080',
+					interactive: true,
+				})
+				tooltip[0].show();
+			});
+		})();
+	</script>
 </body>
 </html>
